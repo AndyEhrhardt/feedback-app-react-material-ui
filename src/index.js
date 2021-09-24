@@ -9,12 +9,14 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
 
-const responseReducer = (state = {}, action) => {
-    if (action.type === 'ADD_RESPONSE'){
-        return action.payload;
-    }
-    return state;
+const responseReducer = (state = {}, action) => { 
+    if (!/^@/.test(action.type)){
+        state[action.key] = action.payload;
+        window.state=state;
+        return state;
+    } else return state
 }
+
 
 const storeInstance = createStore(
     combineReducers({
