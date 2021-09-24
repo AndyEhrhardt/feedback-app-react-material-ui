@@ -1,31 +1,43 @@
-import {HashRouter as Router, Route, Link} from 'react-router-dom';
-import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
-function PageTwo(){
+function PageTwo() {
+    const history = useHistory();
     const [understandingRating, setUnderstandingRating] = useState('');
     const dispatch = useDispatch();
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        dispatch({type: 'understanding', payload: understandingRating})
+        if (understandingRating === "") {
+            alert("Please Enter A Rating")
+        } else {
+            dispatch({ type: 'UNDERSTANDING', payload: understandingRating });
+            history.push('/pageThree');
+        }
     }
 
     return (
         <>
-            <h1>Page Two</h1>
+            <h1>How well are you understanding the content?</h1>
             <form onSubmit={handleSubmit}>
-                <input onChange={(event) => setUnderstandingRating(event.target.value)}
-                    placeholder="Rate"
-                    value={understandingRating} 
+                <TextField
+                    id="standard-basic"
+                    label="Rate"
+                    variant="standard"
+                    onChange={(event) => setUnderstandingRating(event.target.value)}
+                    value={understandingRating}
                     type="number"
                 />
 
-                <input type="submit" value="Submit" />
+                <div className="input-container">
+                    <Button variant="contained" color="success" className="next-button" type="submit" value="Next" >
+                        Next
+                    </Button>
+                </div>
             </form>
-            <Router>
-                <Link to="/pageThree">Next</Link>
-            </Router>
         </>
     )
 }

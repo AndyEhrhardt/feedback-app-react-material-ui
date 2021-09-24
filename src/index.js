@@ -9,13 +9,33 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
 
-const responseReducer = (state = {}, action) => { 
-    if (!/^@/.test(action.type)){
-        state[action.key] = action.payload;
-        window.state=state;
-        return state;
-    } else return state
+const responseReducer = (state = {}, action) => {
+    switch (action.type) {
+        case 'FEELING':
+            state.feeling = action.payload;
+            return state;
+            break;
+        case 'UNDERSTANDING':
+            state.understanding = action.payload;
+            return state;
+            break;
+        case 'SUPPORT':
+            state.support = action.payload;
+            return state;
+            break;
+        case 'COMMENT':
+            state.comments = action.payload.comment;
+            state.flagged = action.payload.flagged;
+            return state;
+            break; 
+        case 'CLEAR':
+            return {};
+            break;
+        default:
+            return state;
+    }
 }
+
 
 
 const storeInstance = createStore(
