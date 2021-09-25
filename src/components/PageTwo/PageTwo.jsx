@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router-dom';
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
@@ -8,6 +8,15 @@ function PageTwo() {
     const history = useHistory();
     const [understandingRating, setUnderstandingRating] = useState('');
     const dispatch = useDispatch();
+    const feedback = useSelector(store => store.responseReducer);
+    
+    useEffect(() => {
+        previousEntryCheck()
+    },[]);
+
+    const previousEntryCheck = () => {
+        feedback.understanding && setUnderstandingRating(feedback.understanding);
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -18,7 +27,10 @@ function PageTwo() {
             history.push('/pageThree');
         }
     }
-
+    const goBack = (event) => {
+        event.preventDefault();
+        history.push('/');
+    }
     return (
         <>
             <h1>How well are you understanding the content?</h1>
@@ -32,8 +44,11 @@ function PageTwo() {
                     type="number"
                 />
 
-                <div className="input-container">
-                    <Button variant="contained" color="success" className="next-button" type="submit" value="Next" >
+                <div className="button-container">
+                    <Button className="previous-button" onClick={goBack} value="Next" >
+                        Previous
+                    </Button>
+                    <Button color="success" className="next-button" type="submit" value="Next" >
                         Next
                     </Button>
                 </div>

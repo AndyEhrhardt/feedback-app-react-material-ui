@@ -19,16 +19,27 @@ function Review() {
             console.log(error);
         })
     }
+    const goBack = (event) => {
+        event.preventDefault();
+        history.push('/pageFour');
+    }
 
     return (
         <>
             <h1>Review Your Feedback</h1>
             <h3>Feeling: {feedback.feeling}</h3>
             <h3>Understanding: {feedback.understanding}</h3>
+            <h3>Support: {feedback.support}</h3>
             <h3>Comments: {feedback.comments}</h3>
-            <Button variant="contained" color="success" className="next-button" onClick={handleSubmit} value="Next" >
-                Submit
-            </Button>
+            {feedback.flagged && (<h3>You have requested a 1:1</h3>)} 
+            <div className="button-container">
+                <Button className="previous-button" onClick={goBack} value="Next" >
+                            Previous
+                </Button>
+                <Button color="success" className="next-button" onClick={handleSubmit} value="Next" >
+                    Submit
+                </Button>
+            </div>
         </>
     )
 }

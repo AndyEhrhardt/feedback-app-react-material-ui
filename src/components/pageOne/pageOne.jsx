@@ -1,7 +1,6 @@
 import { useHistory } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import '../App/PageStyle.css'
+import { useDispatch, useSelector } from 'react-redux';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
@@ -9,7 +8,15 @@ function PageOne() {
     const history = useHistory();
     const [feelingRating, setFeelingRating] = useState('');
     const dispatch = useDispatch();
+    const feedback = useSelector(store => store.responseReducer);
 
+    useEffect(() => {
+        previousEntryCheck()
+    }, []);
+
+    const previousEntryCheck = () => { //checks if something was entered previously and sets the variable to that value 
+        feedback.feeling && setFeelingRating(feedback.feeling);
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -34,13 +41,12 @@ function PageOne() {
                     type="number"
                 />
                 <br />
-                <div className="input-container">
-                    <Button variant="contained" color="success" className="next-button" type="submit" value="Next" >
+                <div className="button-container">
+                    <Button color="success" className="next-button" type="submit" value="Next" >
                         Next
                     </Button>
                 </div>
             </form>
-
         </>
     )
 }

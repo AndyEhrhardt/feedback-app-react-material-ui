@@ -21,3 +21,49 @@
 h4 {
   font-style: italic;
 }
+
+.button-container{
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  max-width: 30%;
+  margin: auto;
+}
+
+.textcheckbox-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox{
+  padding-left: 5px;
+}
+.fade-appear{
+  opacity: 0;
+}
+.fade-appear.fade-appear-active{
+  opacity: 0;
+  transition: opacity 300ms linear;
+}
+.fade-exit{
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-acitve{
+  opacity: 0;
+  transition: opacity 300ms linear;
+}
+
+.fade-exit-done{
+  opacity: 0;
+}
+
+.fade-enter{
+  opacity: 0;
+}
+
+.fade-enter.fade-enter-active{
+  opacity: 1;
+  transition: opacity 300ms linear;
+}

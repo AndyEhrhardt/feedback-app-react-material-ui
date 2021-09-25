@@ -13,7 +13,7 @@ function ThankYou () {
     return (
         <>
             <h1>Thank You!</h1>
-            <Button variant="contained" color="success" className="next-button" onClick={handleSubmit} value="Next" >
+            <Button color="success" className="next-button" onClick={handleSubmit} value="Next" >
                 Submit More Feedback
             </Button>
         </>
