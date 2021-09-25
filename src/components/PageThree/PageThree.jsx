@@ -22,7 +22,7 @@ function PageThree() {
     const handleSubmit = (event) => {
         event.preventDefault();
         if (supportRating === "" || supportRating > 5 || supportRating < 1 ) {
-            alert("Please Enter a Rating")
+            alert("Please Enter a Rating of 1-5")
         } else {
             dispatch({ type: 'SUPPORT', payload: supportRating });
             history.push('/pageFour');
