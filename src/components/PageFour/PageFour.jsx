@@ -31,6 +31,7 @@ function PageFour() {
     }
     const goBack = (event) => {
         event.preventDefault();
+        dispatch({ type: 'COMMENT', payload: { comment: comment, flagged: flagged } });
         history.push('/pageThree');
     }
     return (

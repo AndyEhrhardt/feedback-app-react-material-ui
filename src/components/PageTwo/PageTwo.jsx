@@ -29,6 +29,7 @@ function PageTwo() {
     }
     const goBack = (event) => {
         event.preventDefault();
+        dispatch({ type: 'UNDERSTANDING', payload: understandingRating });
         history.push('/');
     }
     return (

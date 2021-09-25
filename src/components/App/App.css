@@ -44,7 +44,7 @@ h4 {
 }
 .fade-appear.fade-appear-active{
   opacity: 0;
-  transition: opacity 300ms linear;
+  transition: opacity 1000ms linear;
 }
 .fade-exit{
   opacity: 1;
@@ -52,7 +52,7 @@ h4 {
 
 .fade-exit.fade-exit-acitve{
   opacity: 0;
-  transition: opacity 300ms linear;
+  transition: opacity 1000ms linear;
 }
 
 .fade-exit-done{
@@ -65,5 +65,5 @@ h4 {
 
 .fade-enter.fade-enter-active{
   opacity: 1;
-  transition: opacity 300ms linear;
+  transition: opacity 1000ms linear;
 }

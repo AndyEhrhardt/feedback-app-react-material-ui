@@ -30,6 +30,7 @@ function PageThree() {
     }
     const goBack = (event) => {
         event.preventDefault();
+        dispatch({ type: 'SUPPORT', payload: supportRating });
         history.push('/pageTwo');
     }
     return (
