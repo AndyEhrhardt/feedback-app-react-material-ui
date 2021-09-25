@@ -9,7 +9,7 @@ import Checkbox from '@mui/material/Checkbox';
 function PageFour() {
     const history = useHistory();
     const [comment, setComment] = useState('');
-    const [flagged, setFlagged] = useState(false);
+    const [one, setOne] = useState(false);
     const dispatch = useDispatch();
     const feedback = useSelector(store => store.responseReducer);
     
@@ -19,19 +19,19 @@ function PageFour() {
 
     const previousEntryCheck = () => {
         feedback.comments && setComment(feedback.comments);
-        feedback.flagged && setFlagged(feedback.flagged);
+        feedback.one && setOne(feedback.one);
     }
 
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(flagged)
-        dispatch({ type: 'COMMENT', payload: { comment: comment, flagged: flagged } });
+        console.log(one)
+        dispatch({ type: 'COMMENT', payload: { comment: comment, one: one } });
         history.push('/review');
     }
     const goBack = (event) => {
         event.preventDefault();
-        dispatch({ type: 'COMMENT', payload: { comment: comment, flagged: flagged } });
+        dispatch({ type: 'COMMENT', payload: { comment: comment, one: one } });
         history.push('/pageThree');
     }
     return (
@@ -52,9 +52,9 @@ function PageFour() {
                             label="I would like to request a 1:1" 
                             onChange={(event) => {
                                 event.preventDefault;
-                                flagged ? setFlagged(false) : setFlagged(true)
+                                one ? setOne(false) : setOne(true)
                             }}
-                            checked={flagged}
+                            checked={one}
                         />
                     </div>
                     <label> I would like to request  a 1:1</label>

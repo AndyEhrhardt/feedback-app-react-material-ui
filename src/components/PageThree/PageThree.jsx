@@ -21,7 +21,7 @@ function PageThree() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (supportRating === "") {
+        if (supportRating === "" || supportRating > 5 || supportRating < 1 ) {
             alert("Please Enter a Rating")
         } else {
             dispatch({ type: 'SUPPORT', payload: supportRating });

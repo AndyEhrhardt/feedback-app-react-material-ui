@@ -7,6 +7,7 @@ import PageThree from '../PageThree/PageThree'
 import PageFour from '../PageFour/PageFour'
 import Review from '../Review/Review'
 import ThankYou from '../ThankYou/ThankYou'
+import Admin from '../Admin/Admin'
 import Box from '@mui/material/Box';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
@@ -15,6 +16,7 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 
 function App() {
+    
   useEffect(() => {
     getResponses();
   }, [])
@@ -41,6 +43,7 @@ function App() {
             <Route path="/pageFour" exact> <PageFour /> </Route>
             <Route path="/review" exact> <Review /> </Route>
             <Route path="/thankYou" exact> <ThankYou /> </Route>
+            <Route path="/admin" exact> <Admin/> </Route>
           </Router>
           {/*All Routes are set to exact so that only one page will show on screen at a time */}
         </div> 

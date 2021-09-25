@@ -20,8 +20,8 @@ function PageTwo() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (understandingRating === "") {
-            alert("Please Enter A Rating")
+        if (understandingRating === "" || understandingRating < 1 || understandingRating > 5) {
+            alert("Please Enter A Rating of 1-5")
         } else {
             dispatch({ type: 'UNDERSTANDING', payload: understandingRating });
             history.push('/pageThree');

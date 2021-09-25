@@ -25,7 +25,7 @@ const responseReducer = (state = {}, action) => {
             break;
         case 'COMMENT':
             state.comments = action.payload.comment;
-            state.flagged = action.payload.flagged;
+            state.one = action.payload.one;
             return state;
             break; 
         case 'CLEAR':

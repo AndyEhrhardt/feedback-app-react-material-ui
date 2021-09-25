@@ -20,8 +20,8 @@ function PageOne() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (feelingRating === "") { //confirms something has been entered in the input 
-            alert("Please Enter A Rating")
+        if (feelingRating === "" || feelingRating < 1 || feelingRating > 5) { //confirms something has been entered in the input 
+            alert("Please Enter A Rating of 1-5")
         } else {
             dispatch({ type: 'FEELING', payload: feelingRating }) //sends information to reducer
             history.push('/pageTwo'); //Navigates user to the next page 
@@ -34,7 +34,7 @@ function PageOne() {
             <form onSubmit={handleSubmit}>
                 <TextField
                     id="standard-basic"
-                    label="Rate"
+                    label="Rate 1-5"
                     variant="standard"
                     onChange={(event) => setFeelingRating(event.target.value)}
                     value={feelingRating}
