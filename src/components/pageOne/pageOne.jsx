@@ -40,7 +40,7 @@ function PageOne() {
             </Typography>
             <form onSubmit={handleSubmit}>
                 <Typography variant="h6" component="h3">
-                Rate 1-5
+                    Rate 1-5
                 </Typography>
                 <br>
                 </br>

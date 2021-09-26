@@ -12,7 +12,7 @@ import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 function Admin() {
-    
+
     const [feedback, setFeedback] = useState([]);
 
     useEffect(() => {
@@ -30,10 +30,10 @@ function Admin() {
     }
 
     const setFlagged = (event) => {
-        axios.put(`/responses/${event.target.value}`, {flagged: event.target.checked}).then(response => {
+        axios.put(`/responses/${event.target.value}`, { flagged: event.target.checked }).then(response => {
             console.log(response);
             getFeedback();
-        }).catch(error=>{
+        }).catch(error => {
             console.log(error)
         });
     }
@@ -41,7 +41,7 @@ function Admin() {
         axios.delete(`/responses/${id}`).then(response => {
             console.log(response);
             getFeedback();
-        }).catch(error=>{
+        }).catch(error => {
             console.log(error)
         });
     }
@@ -65,8 +65,8 @@ function Admin() {
                     <TableBody>
                         {feedback.map((user) => (
                             <TableRow
-                            key={user.id}
-                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                key={user.id}
+                                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                             >
                                 <TableCell align="right">{user.feeling}</TableCell>
                                 <TableCell align="right">{user.understanding}</TableCell>
@@ -82,7 +82,7 @@ function Admin() {
                                 </TableCell>
                                 <TableCell align="right">
                                     <IconButton aria-label="delete">
-                                        <DeleteIcon 
+                                        <DeleteIcon
                                             onClick={() => deleteFeedback(user.id)}
                                         />
                                     </IconButton>

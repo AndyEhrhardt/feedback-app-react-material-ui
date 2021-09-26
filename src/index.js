@@ -10,7 +10,7 @@ import logger from 'redux-logger';
 
 
 const responseReducer = (state = {}, action) => {
-    switch (action.type) {
+    switch (action.type) { //depending on the action type being sent, a different key will be created within the object
         case 'FEELING':
             state.feeling = action.payload;
             return state;
@@ -27,7 +27,7 @@ const responseReducer = (state = {}, action) => {
             state.comments = action.payload.comment;
             state.one = action.payload.one;
             return state;
-            break; 
+            break;
         case 'CLEAR':
             return {};
             break;
@@ -35,8 +35,6 @@ const responseReducer = (state = {}, action) => {
             return state;
     }
 }
-
-
 
 const storeInstance = createStore(
     combineReducers({

@@ -40,38 +40,9 @@ h4 {
 .checkbox{
   padding-left: 5px;
 }
-.fade-appear{
-  opacity: 0;
-}
-.fade-appear.fade-appear-active{
-  opacity: 0;
-  transition: opacity 1000ms linear;
-}
-.fade-exit{
-  opacity: 1;
-}
-
-.fade-exit.fade-exit-acitve{
-  opacity: 0;
-  transition: opacity 1000ms linear;
-}
-
-.fade-exit-done{
-  opacity: 0;
-}
-
-.fade-enter{
-  opacity: 0;
-}
-
-.fade-enter.fade-enter-active{
-  opacity: 1;
-  transition: opacity 1000ms linear;
-}
 
 .admin-table-container{
   max-width: 90%;
-  
 }
 
 .admin-master{
@@ -98,29 +69,4 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.slide-enter,
-.slide-exit {
-  transition: transform 1000ms ease-out;
-}
-
-.slide-enter {
-  transform: translateX(100%);
-}
-
-.slide-enter.slide-enter-active {
-  transform: translateX(0%);
-}
-
-.slide-exit {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transform: translateX(0%);
-}
-
-.slide-exit-active {
-  transform: translateX(-100%);
 }

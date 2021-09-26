@@ -32,10 +32,10 @@ function Review() {
                 <h3>Understanding: {feedback.understanding}</h3>
                 <h3>Support: {feedback.support}</h3>
                 <h3>Comments: {feedback.comments}</h3>
-                {feedback.one && (<h3>You have requested a 1:1</h3>)} 
+                {feedback.one && (<h3>You have requested a 1:1</h3>)}
                 <div className="button-container">
                     <Button className="previous-button" onClick={goBack} value="Next" >
-                                Previous
+                        Previous
                     </Button>
                     <Button color="success" className="next-button" onClick={handleSubmit} value="Next" >
                         Submit

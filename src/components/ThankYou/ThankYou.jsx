@@ -3,9 +3,9 @@ import Button from '@mui/material/Button';
 
 
 
-function ThankYou () {
+function ThankYou() {
     const history = useHistory();
-    
+
     const handleSubmit = (event) => {
         event.preventDefault();
         history.push('/');

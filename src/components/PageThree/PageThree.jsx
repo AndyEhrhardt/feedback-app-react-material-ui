@@ -12,10 +12,10 @@ function PageThree() {
     const [supportRating, setSupportRating] = useState(0);
     const dispatch = useDispatch();
     const feedback = useSelector(store => store.responseReducer);
-    
+
     useEffect(() => {
         previousEntryCheck()
-    },[]);
+    }, []);
 
     const previousEntryCheck = () => {
         feedback.support && setSupportRating(feedback.support);
@@ -24,7 +24,7 @@ function PageThree() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (supportRating === "" || supportRating > 5 || supportRating < 1 ) {
+        if (supportRating === "" || supportRating > 5 || supportRating < 1) {
             alert("Please Enter a Rating of 1-5")
         } else {
             dispatch({ type: 'SUPPORT', payload: supportRating });
@@ -44,7 +44,7 @@ function PageThree() {
             <h1>How well are you being supported? </h1>
             <form onSubmit={handleSubmit}>
                 <Typography variant="h6" component="h3">
-                Rate 1-5
+                    Rate 1-5
                 </Typography>
                 <br>
                 </br>

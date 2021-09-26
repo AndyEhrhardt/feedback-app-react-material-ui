@@ -34,26 +34,26 @@ router.post('/', (req, res) => {
     });
 });
 
-router.put('/:id', (req,res) => {
+router.put('/:id', (req, res) => {
   console.log(req.params.id);
   console.log(req.body.flagged)
   const queryText = 'UPDATE "feedback" SET "flagged" = $1 WHERE "id" = $2;';
   pool.query(queryText, [req.body.flagged, req.params.id]).then((result) => {
-      res.sendStatus(200);
+    res.sendStatus(200);
   }).catch((error) => {
-      console.log('Error in /responses PUT', error);
-      res.sendStatus(500);
+    console.log('Error in /responses PUT', error);
+    res.sendStatus(500);
   })
 });
 
-router.delete('/:id', (req,res) => {
+router.delete('/:id', (req, res) => {
   console.log(req.params.id);
   const queryText = 'DELETE FROM "feedback" WHERE "id" = $1;';
   pool.query(queryText, [req.params.id]).then((result) => {
-      res.sendStatus(200);
+    res.sendStatus(200);
   }).catch((error) => {
-      console.log('Error in /responses DELETE', error);
-      res.sendStatus(500);
+    console.log('Error in /responses DELETE', error);
+    res.sendStatus(500);
   })
 });
 

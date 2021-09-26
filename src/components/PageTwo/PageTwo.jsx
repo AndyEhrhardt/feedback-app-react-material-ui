@@ -11,10 +11,10 @@ function PageTwo() {
     const [understandingRating, setUnderstandingRating] = useState(0);
     const dispatch = useDispatch();
     const feedback = useSelector(store => store.responseReducer);
-    
+
     useEffect(() => {
         previousEntryCheck()
-    },[]);
+    }, []);
 
     const previousEntryCheck = () => {
         feedback.understanding && setUnderstandingRating(feedback.understanding);
@@ -34,7 +34,7 @@ function PageTwo() {
         dispatch({ type: 'UNDERSTANDING', payload: understandingRating });
         history.push('/');
     }
-    
+
     function valuetext(value) { //displays the number selected on the slider
         return `${value}`;
     }
