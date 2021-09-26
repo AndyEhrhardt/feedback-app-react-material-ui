@@ -10,4 +10,4 @@ The user provides ratings on a scale on 3 different items; feeling, support and 
 
 Once they hit submit on the review page, their reponses are posted via axios to a database. At this point the user is thanked for their input and asked if they would like to leave more feedback. 
 
-This data in the database is accessible through a get request on an admin page, and is viewed through a table. 
+This data in the database is accessible through a get request on an admin page, and is viewed through a table. On this table the admin is able to update if any feedback needs review, through a put request, and also delete any feedback from the database. 

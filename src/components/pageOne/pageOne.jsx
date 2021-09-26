@@ -3,10 +3,13 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Slider from '@mui/material/Slider';
+import Box from '@mui/material/Box';
 
 function PageOne() {
     const history = useHistory();
-    const [feelingRating, setFeelingRating] = useState('');
+    const [feelingRating, setFeelingRating] = useState(0); //by default the slider is set to zero, forcing the user to choose a number 
     const dispatch = useDispatch();
     const feedback = useSelector(store => store.responseReducer);
 
@@ -27,19 +30,36 @@ function PageOne() {
             history.push('/pageTwo'); //Navigates user to the next page 
         }
     }
-
+    function valuetext(value) { //displays the number selected on the slider
+        return `${value}`;
+    }
     return (
         <>
-            <h1>How are you feeling today?</h1>
+            <Typography variant="h4" component="h3">
+                How are you feeling today?
+            </Typography>
             <form onSubmit={handleSubmit}>
-                <TextField
-                    id="standard-basic"
-                    label="Rate 1-5"
-                    variant="standard"
-                    onChange={(event) => setFeelingRating(event.target.value)}
-                    value={feelingRating}
-                    type="number"
-                />
+                <Typography variant="h6" component="h3">
+                Rate 1-5
+                </Typography>
+                <br>
+                </br>
+                <br>
+                </br>
+                <div className="slider-container">
+                    <Box sx={{ width: 300 }}>
+                        <Slider
+                            aria-label="Rating"
+                            value={feelingRating} /* Will set the slider to previous rating if user navigates back to page */
+                            valueLabelDisplay={valuetext}
+                            onChange={(event) => setFeelingRating(event.target.value)}
+                            step={1}
+                            marks
+                            min={0}
+                            max={5}
+                        />
+                    </Box>
+                </div>
                 <br />
                 <div className="button-container">
                     <Button color="success" className="next-button" type="submit" value="Next" >

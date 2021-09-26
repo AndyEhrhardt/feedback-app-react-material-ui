@@ -1,12 +1,14 @@
 .App {
   text-align: center;
+  background-color: #3498DB;
+  height:100vh;
 }
 
 .App-header {
-  background-color: #033076;
+  background-color: #2C3E50;
   min-height: 70px;
   padding: 20px;
-  color: white;
+  color: #ECF0F1;
   margin-bottom: 20px;
 }
 
@@ -26,7 +28,6 @@ h4 {
   padding-top: 20px;
   display: flex;
   justify-content: space-around;
-  max-width: 30%;
   margin: auto;
 }
 
@@ -75,5 +76,26 @@ h4 {
 
 .admin-master{
   display: flex;
+  justify-content: center;
+}
+
+.feedback-wrap{
+  max-width: 40%;
+  margin: auto;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; 
+}
+
+.tab-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-container{
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
