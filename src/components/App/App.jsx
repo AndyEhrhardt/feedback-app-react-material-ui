@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import PageOne from '../PageOne/PageOne.jsx'
+import PageOne from '../PageOne/PageOne'
 import PageTwo from '../PageTwo/PageTwo'
 import PageThree from '../PageThree/PageThree'
 import PageFour from '../PageFour/PageFour'
@@ -8,7 +8,6 @@ import Review from '../Review/Review'
 import ThankYou from '../ThankYou/ThankYou'
 import Admin from '../Admin/Admin'
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 
