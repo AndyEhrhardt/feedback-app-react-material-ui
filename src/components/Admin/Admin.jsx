@@ -73,7 +73,7 @@ function Admin() {
                                 <TableCell align="right">{user.support}</TableCell>
                                 <TableCell align="right">{user.comments}</TableCell>
                                 {user.one ? (<TableCell align="right">Yes!</TableCell>) : (<TableCell align="right">No :(</TableCell>)}
-                                <TableCell align="right">{new Date(feedback[0].date).toISOString(user.date).slice(0, 19).replace('T', ' ')}</TableCell>
+                                <TableCell align="right">{new Date(user.date).toISOString().slice(0, 10).replace('T', ' ')}</TableCell>
                                 <TableCell align="right">
                                     <Checkbox checked={user.flagged}
                                         value={user.id}
