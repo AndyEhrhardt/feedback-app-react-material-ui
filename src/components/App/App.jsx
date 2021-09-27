@@ -33,34 +33,22 @@ function App() {
       </header>
       <Router>
         <Route path="/" exact>
-          <Paper className="feedback-wrap" elevation="11" variant="elevation">
             <PageOne className="fade" />
-          </Paper>
         </Route>
         <Route path="/pageTwo" exact>
-          <Paper className="feedback-wrap" elevation="11" variant="elevation">
             <PageTwo className="fade" />
-          </Paper>
         </Route>
         <Route path="/pageThree" exact>
-          <Paper className="feedback-wrap" elevation="11" variant="elevation">
             <PageThree />
-          </Paper>
         </Route>
         <Route path="/pageFour" exact>
-          <Paper className="feedback-wrap" elevation="11" variant="elevation">
             <PageFour />
-          </Paper>
         </Route>
         <Route path="/review" exact>
-          <Paper className="feedback-wrap" elevation="11" variant="elevation">
             <Review />
-          </Paper>
         </Route>
         <Route path="/thankYou" exact>
-          <Paper className="feedback-wrap" elevation="11" variant="elevation">
             <ThankYou />
-          </Paper>
         </Route>
         <Route path="/admin" exact> <Admin /> </Route>
       </Router>

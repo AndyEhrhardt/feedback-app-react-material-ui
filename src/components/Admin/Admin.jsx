@@ -53,10 +53,10 @@ function Admin() {
                     <TableHead>
                         <TableRow>
                             <TableCell>Feeling</TableCell>
-                            <TableCell align="right">Understanding</TableCell>
-                            <TableCell align="right">Support</TableCell>
+                            <TableCell align="right">Skills</TableCell>
+                            <TableCell align="right">Animations</TableCell>
                             <TableCell align="right">Comments</TableCell>
-                            <TableCell align="right">1:1</TableCell>
+                            <TableCell align="right">Enjoys Coding</TableCell>
                             <TableCell align="right">Date</TableCell>
                             <TableCell align="right">Flag for Follow Up</TableCell>
                             <TableCell align="right">Delete</TableCell>
@@ -72,7 +72,7 @@ function Admin() {
                                 <TableCell align="right">{user.understanding}</TableCell>
                                 <TableCell align="right">{user.support}</TableCell>
                                 <TableCell align="right">{user.comments}</TableCell>
-                                {user.one ? (<TableCell align="right">Requested</TableCell>) : (<TableCell align="right">Not Requested</TableCell>)}
+                                {user.one ? (<TableCell align="right">Yes!</TableCell>) : (<TableCell align="right">No :(</TableCell>)}
                                 <TableCell align="right">{new Date(feedback[0].date).toISOString(user.date).slice(0, 19).replace('T', ' ')}</TableCell>
                                 <TableCell align="right">
                                     <Checkbox checked={user.flagged}

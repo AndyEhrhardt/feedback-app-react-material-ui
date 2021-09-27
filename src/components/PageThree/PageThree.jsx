@@ -6,12 +6,14 @@ import Button from '@mui/material/Button';
 import Slider from '@mui/material/Slider';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import Paper from '@mui/material/Paper';
 
 function PageThree() {
     const history = useHistory();
     const [supportRating, setSupportRating] = useState(0);
     const dispatch = useDispatch();
     const feedback = useSelector(store => store.responseReducer);
+    const [whichFade, setWhichFade] = useState(true);
 
     useEffect(() => {
         previousEntryCheck()
@@ -28,21 +30,22 @@ function PageThree() {
             alert("Please Enter a Rating of 1-5")
         } else {
             dispatch({ type: 'SUPPORT', payload: supportRating });
-            history.push('/pageFour');
+            setWhichFade(false);
+            setTimeout(() => {history.push('/pageFour')}, 230);
         }
     }
     const goBack = (event) => {
         event.preventDefault();
         dispatch({ type: 'SUPPORT', payload: supportRating });
-        history.push('/pageTwo');
+        setWhichFade(false);
+        setTimeout(() => {history.push('/pageTwo')}, 230);
     }
     function valuetext(value) { //displays the number selected on the slider
         return `${value}`;
     }
-    return (
-        <>  
-            <Typography variant="h4" component="h3">
-                How well are you being supported? 
+    return (  
+        <Paper  elevation="11" variant="elevation" className={whichFade ? ("fade-in feedback-wrap"): ("fade-out feedback-wrap")}>            <Typography variant="h4" component="h3">
+                How cool are the animations on this app? 
             </Typography>
             <form onSubmit={handleSubmit}>
                 <Typography variant="h6" component="h3">
@@ -67,15 +70,15 @@ function PageThree() {
                     </Box>
                 </div>
                 <div className="button-container">
-                    <Button className="previous-button" onClick={goBack} value="Next" >
+                    <Button className="previous-button" id="threeBack" onClick={goBack} value="Next" >
                         Previous
                     </Button>
-                    <Button color="success" className="next-button" type="submit" value="Next" >
+                    <Button color="success" className="next-button" id="threeNext" type="submit" value="Next" >
                         Next
                     </Button>
                 </div>
             </form>
-        </>
+        </Paper>
     )
 }
 

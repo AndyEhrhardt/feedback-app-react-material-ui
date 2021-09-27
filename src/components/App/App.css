@@ -74,12 +74,12 @@ h4 {
 
 .fade-in{
   animation-name: fadeIn;
-  animation-duration: 1000ms;
+  animation-duration: 240ms;
 }
 
 .fade-out{
   animation-name: fadeOut;
-  animation-duration: 1000ms;
+  animation-duration: 240ms;
 }
 
 @keyframes fadeIn {
@@ -89,4 +89,23 @@ h4 {
 @keyframes fadeOut {
   from {opacity: 1}
   to {opacity: 0}
+}
+
+#oneNext{
+  margin-top: 20px;
+}
+
+#threeNext{
+  margin-top: 20px
+} 
+
+#threeBack{
+  margin-top: 20px
+}
+
+#thank-you-wrap{
+  display: flex;
+  flex-direction: column;
+  
+  align-items: space-around;
 }

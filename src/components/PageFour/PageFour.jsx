@@ -5,12 +5,13 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
 import Typography from '@mui/material/Typography';
-
+import Paper from '@mui/material/Paper';
 
 function PageFour() {
     const history = useHistory();
     const [comment, setComment] = useState('');
     const [one, setOne] = useState(false);
+    const [whichFade, setWhichFade] = useState(true);
     const dispatch = useDispatch();
     const feedback = useSelector(store => store.responseReducer);
     
@@ -28,15 +29,17 @@ function PageFour() {
         event.preventDefault();
         console.log(one)
         dispatch({ type: 'COMMENT', payload: { comment: comment, one: one } });
-        history.push('/review');
+        setWhichFade(false);
+        setTimeout(() => {history.push('/review')}, 230);
     }
     const goBack = (event) => {
         event.preventDefault();
         dispatch({ type: 'COMMENT', payload: { comment: comment, one: one } });
-        history.push('/pageThree');
+        setWhichFade(false);
+        setTimeout(() => {history.push('/pageThree')}, 230);
     }
-    return (
-        <>  
+    return ( 
+            <Paper  elevation="11" variant="elevation" className={whichFade ? ("fade-in feedback-wrap"): ("fade-out feedback-wrap")}>
             <Typography variant="h4" component="h3">
                 Any comments you want to leave?
             </Typography>
@@ -52,7 +55,7 @@ function PageFour() {
                     />
                     <div className="checkbox">
                         <Checkbox 
-                            label="I would like to request a 1:1" 
+                            label="I like coding" 
                             onChange={(event) => {
                                 event.preventDefault;
                                 one ? setOne(false) : setOne(true)
@@ -60,7 +63,7 @@ function PageFour() {
                             checked={one}
                         />
                     </div>
-                    <label> I would like to request  a 1:1</label>
+                    <label> Enjoy Coding</label>
                 </div>
                 <div className="button-container">
                     <Button className="previous-button" onClick={goBack} value="Next" >
@@ -71,7 +74,7 @@ function PageFour() {
                     </Button>
                 </div>
             </form>
-        </>
+        </Paper>
     )
 }
 

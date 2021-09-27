@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Slider from '@mui/material/Slider';
 import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
 
 function PageOne() {
     const history = useHistory();
@@ -28,14 +29,15 @@ function PageOne() {
             alert("Please Enter A Rating of 1-5")
         } else {
             dispatch({ type: 'FEELING', payload: feelingRating }) //sends information to reducer
-            history.push('/pageTwo')//Navigates user to the next page 
+            setWhichFade(false);
+            setTimeout(() => {history.push('/pageTwo')}, 230);//Navigates user to the next page 
         }
     }
     function valuetext(value) { //displays the number selected on the slider
         return `${value}`;
     }
     return (
-        <div>
+        <Paper  elevation="11" variant="elevation" className={whichFade ? ("fade-in feedback-wrap"): ("fade-out feedback-wrap")}>
             <Typography variant="h4" component="h3">
                 How are you feeling today?
             </Typography>
@@ -63,12 +65,12 @@ function PageOne() {
                 </div>
                 <br />
                 <div className="button-container">
-                    <Button color="success" className="next-button" type="submit" value="Next" >
+                    <Button color="success" className="next-button" id="oneNext" type="submit" value="Next" >
                         Next
                     </Button>
                 </div>
             </form>
-        </div>
+        </Paper>
     )
 }
 
