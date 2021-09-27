@@ -40,8 +40,10 @@ function PageThree() {
         return `${value}`;
     }
     return (
-        <>
-            <h1>How well are you being supported? </h1>
+        <>  
+            <Typography variant="h4" component="h3">
+                How well are you being supported? 
+            </Typography>
             <form onSubmit={handleSubmit}>
                 <Typography variant="h6" component="h3">
                     Rate 1-5

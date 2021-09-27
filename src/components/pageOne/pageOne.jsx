@@ -10,9 +10,10 @@ import Box from '@mui/material/Box';
 function PageOne() {
     const history = useHistory();
     const [feelingRating, setFeelingRating] = useState(0); //by default the slider is set to zero, forcing the user to choose a number 
+    const [whichFade, setWhichFade] = useState(true);
     const dispatch = useDispatch();
     const feedback = useSelector(store => store.responseReducer);
-
+    
     useEffect(() => {
         previousEntryCheck()
     }, []);
@@ -27,14 +28,14 @@ function PageOne() {
             alert("Please Enter A Rating of 1-5")
         } else {
             dispatch({ type: 'FEELING', payload: feelingRating }) //sends information to reducer
-            history.push('/pageTwo'); //Navigates user to the next page 
+            history.push('/pageTwo')//Navigates user to the next page 
         }
     }
     function valuetext(value) { //displays the number selected on the slider
         return `${value}`;
     }
     return (
-        <>
+        <div>
             <Typography variant="h4" component="h3">
                 How are you feeling today?
             </Typography>
@@ -67,7 +68,7 @@ function PageOne() {
                     </Button>
                 </div>
             </form>
-        </>
+        </div>
     )
 }
 

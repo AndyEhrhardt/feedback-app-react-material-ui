@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
+import Typography from '@mui/material/Typography';
 
 
 function PageFour() {
@@ -35,8 +36,10 @@ function PageFour() {
         history.push('/pageThree');
     }
     return (
-        <>
-            <h1>Any comments you want to leave?</h1>
+        <>  
+            <Typography variant="h4" component="h3">
+                Any comments you want to leave?
+            </Typography>
             <form onSubmit={handleSubmit}>
                 <div className="textcheckbox-wrapper">
                     <TextField

@@ -40,8 +40,11 @@ function PageTwo() {
     }
 
     return (
-        <>
-            <h1>How well are you understanding the content?</h1>
+        <>              
+        
+            <Typography variant="h4" component="h3">
+                How well are you understanding the content?
+            </Typography>
             <form onSubmit={handleSubmit}>
                 <Typography variant="h6" component="h3">
                     Rate 1-5
