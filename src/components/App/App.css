@@ -57,6 +57,7 @@ h4 {
   display: flex;
   flex-direction: column;
   justify-content: space-around; 
+  text-align: center;
 }
 
 .tab-container{
@@ -108,4 +109,8 @@ h4 {
   flex-direction: column;
   
   align-items: space-around;
+}
+
+#animation-feedback{
+  width: 95%;
 }

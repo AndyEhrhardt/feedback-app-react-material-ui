@@ -44,7 +44,8 @@ function PageThree() {
         return `${value}`;
     }
     return (  
-        <Paper  elevation="11" variant="elevation" className={whichFade ? ("fade-in feedback-wrap"): ("fade-out feedback-wrap")}>            <Typography variant="h4" component="h3">
+        <Paper  elevation="11" variant="elevation" className={whichFade ? ("fade-in feedback-wrap"): ("fade-out feedback-wrap")}>            
+            <Typography variant="h4" component="h3" id="animation-feedback">
                 How cool are the animations on this app? 
             </Typography>
             <form onSubmit={handleSubmit}>

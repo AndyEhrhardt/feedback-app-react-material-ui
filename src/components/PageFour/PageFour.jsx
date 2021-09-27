@@ -40,9 +40,11 @@ function PageFour() {
     }
     return ( 
             <Paper  elevation="11" variant="elevation" className={whichFade ? ("fade-in feedback-wrap"): ("fade-out feedback-wrap")}>
-            <Typography variant="h4" component="h3">
-                Any comments you want to leave?
-            </Typography>
+            <div class="animation-feedback-div">
+                <Typography variant="h4" component="h3">
+                    Any comments you want to leave?
+                </Typography>
+            </div>
             <form onSubmit={handleSubmit}>
                 <div className="textcheckbox-wrapper">
                     <TextField
