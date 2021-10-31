@@ -2,6 +2,10 @@
 
 Simple Feeback Entry App
 
+## Demo
+
+![Alt Text](https://media2.giphy.com/media/UggB1oajKw79TJhCxh/giphy.gif?cid=790b761102f0cb2d7906bb220322ce52688dc4d23328d72e&rid=giphy.gif)
+
 ## Description
 
 This app collects ratings and comments from a user. Each item the user enters is on it's own page. The user's inputs are intially stored in a redux store meaning the user has the ability to go back and change their response to any item. The user will also see their inital entry when navigating to a previous entry. 
